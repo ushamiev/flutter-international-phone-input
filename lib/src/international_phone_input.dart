@@ -134,10 +134,12 @@ class _InternationalPhoneInputState extends State<InternationalPhoneInput> {
           if (isValid) {
             PhoneService.getNormalizedPhoneNumber(phoneText, selectedItem.code)
                 .then((number) {
-              widget.onPhoneNumberChange(phoneText, number, selectedItem.code, selectedItem.dialCode);
+              widget.onPhoneNumberChange(
+                  phoneText, number, selectedItem.code, selectedItem.dialCode);
             });
           } else {
-            widget.onPhoneNumberChange('', '', selectedItem.code, selectedItem.dialCode);
+            widget.onPhoneNumberChange(
+                '', '', selectedItem.code, selectedItem.dialCode);
           }
         }
       });
@@ -178,6 +180,7 @@ class _InternationalPhoneInputState extends State<InternationalPhoneInput> {
   Widget build(BuildContext context) {
     return Container(
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           DropdownButtonHideUnderline(
@@ -224,11 +227,10 @@ class _InternationalPhoneInputState extends State<InternationalPhoneInput> {
             ),
           ),
           Flexible(
-              child: Center(
-                child: TextField(
-            keyboardType: TextInputType.phone,
-            controller: phoneTextController,
-            decoration: decoration ??
+            child: TextField(
+              keyboardType: TextInputType.phone,
+              controller: phoneTextController,
+              decoration: decoration ??
                   InputDecoration(
                     hintText: hintText,
                     labelText: labelText,
@@ -239,8 +241,8 @@ class _InternationalPhoneInputState extends State<InternationalPhoneInput> {
                     errorMaxLines: errorMaxLines ?? 3,
                     border: border ?? null,
                   ),
+            ),
           ),
-              ))
         ],
       ),
     );
