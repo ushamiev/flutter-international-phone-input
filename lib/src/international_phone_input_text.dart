@@ -107,6 +107,7 @@ class _InternationalPhoneInputTextState
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(8.0),
