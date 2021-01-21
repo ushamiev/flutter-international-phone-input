@@ -224,21 +224,23 @@ class _InternationalPhoneInputState extends State<InternationalPhoneInput> {
             ),
           ),
           Flexible(
-              child: TextField(
+              child: Center(
+                child: TextField(
             keyboardType: TextInputType.phone,
             controller: phoneTextController,
             decoration: decoration ??
-                InputDecoration(
-                  hintText: hintText,
-                  labelText: labelText,
-                  errorText: hasError ? errorText : null,
-                  hintStyle: hintStyle ?? null,
-                  errorStyle: errorStyle ?? null,
-                  labelStyle: labelStyle,
-                  errorMaxLines: errorMaxLines ?? 3,
-                  border: border ?? null,
-                ),
-          ))
+                  InputDecoration(
+                    hintText: hintText,
+                    labelText: labelText,
+                    errorText: hasError ? errorText : null,
+                    hintStyle: hintStyle ?? null,
+                    errorStyle: errorStyle ?? null,
+                    labelStyle: labelStyle,
+                    errorMaxLines: errorMaxLines ?? 3,
+                    border: border ?? null,
+                  ),
+          ),
+              ))
         ],
       ),
     );
